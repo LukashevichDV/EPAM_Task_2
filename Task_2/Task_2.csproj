@@ -43,6 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\SentenceElementType.cs" />
+    <Compile Include="Interfaces\IFileReader.cs" />
+    <Compile Include="Interfaces\IParser.cs" />
+    <Compile Include="Interfaces\IPunctuationMarkWorker.cs" />
+    <Compile Include="Interfaces\ISentence.cs" />
+    <Compile Include="Interfaces\ISentenceElement.cs" />
+    <Compile Include="Interfaces\IWordWorker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
