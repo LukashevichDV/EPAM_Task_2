@@ -43,11 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DocPage.cs" />
+    <Compile Include="BuffReader.cs" />
+    <Compile Include="Concordance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Document.cs" />
-    <Compile Include="Word.cs" />
+    <Compile Include="WordInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
