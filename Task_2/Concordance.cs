@@ -7,13 +7,13 @@ namespace Task_2
 {
     public class Concordance
     {
-
         public Dictionary<string, WordInfo> concordanceDictionary = new Dictionary<string, WordInfo>();
 
 
         public void AddWordsToDictionary(string[] lines)
         {
             int i = 0;
+            int StringsInPage = 5;// In one page will be 5 strings
 
             foreach (var line in lines)
             {
@@ -21,7 +21,7 @@ namespace Task_2
                 {
                     if (!concordanceDictionary.ContainsKey(word))
                     {
-                        concordanceDictionary.Add(word, new WordInfo(word, i / 10 + 1));//Supposing in one page are 10 strings
+                        concordanceDictionary.Add(word, new WordInfo(word, i / StringsInPage + 1));
                         if (concordanceDictionary.ContainsKey(""))
                         {
                             concordanceDictionary.Remove("");
@@ -30,28 +30,24 @@ namespace Task_2
                     else
                     {
                         concordanceDictionary[word].WordCount++;
-                        if (!concordanceDictionary[word].PageNumber.Contains(i / 10 + 1))
+                        if (!concordanceDictionary[word].PageNumber.Contains(i / StringsInPage + 1))
                         {
-
-                            concordanceDictionary[word].PageNumber.Add(i / 10 + 1);
+                            concordanceDictionary[word].PageNumber.Add(i / StringsInPage + 1);
                         }
                     }
                 }
                 i++;
             }
-
         }
 
         public void ShowResult()
         {
-
             List<WordInfo> sortedWordInfos = concordanceDictionary.Values.OrderBy(a => a.Word).ToList();
 
             string temp2 = "";
             foreach (var pair in sortedWordInfos)
             {
                 Console.WriteLine("\n");
-                // if (pair.Word != "")
 
                 string temp = pair.Word.Substring(0, 1).ToUpper();
                 if (temp != temp2)
