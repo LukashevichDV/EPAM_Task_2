@@ -42,16 +42,17 @@ namespace Task_2
 
         public void ShowResult()
         {
-            List<WordInfo> sortedWordInfos = concordanceDictionary.Values.OrderBy(a => a.Word).ToList();
+            List<WordInfo> sortedWordInfo = concordanceDictionary.Values.OrderBy(x => x.Word).ToList();
 
             string temp2 = "";
-            foreach (var pair in sortedWordInfos)
+            foreach (var pair in sortedWordInfo)
             {
                 Console.WriteLine("\n");
 
                 string temp = pair.Word.Substring(0, 1).ToUpper();
                 if (temp != temp2)
                     Console.WriteLine("[{0}]", pair.Word.Substring(0, 1).ToUpper());
+
                 temp2 = pair.Word.Substring(0, 1).ToUpper();
 
                 Console.Write(pair.Word + " " + pair.WordCount + ":.......");
